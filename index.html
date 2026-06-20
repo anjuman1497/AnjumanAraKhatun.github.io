@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Anjuman Ara Khatun | Materials Scientist & Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal-deep:   #0D4F5C;
+      --teal-mid:    #1A6B7A;
+      --teal-light:  #2E8B9A;
+      --gold:        #C9952A;
+      --gold-light:  #E8B84B;
+      --ivory:       #F8F6F1;
+      --ivory-dark:  #EEE9DF;
+      --slate:       #2C3E4A;
+      --slate-mid:   #4A5F6E;
+      --slate-light: #7A8E99;
+      --white:       #FFFFFF;
+      --border:      #D4CBB8;
+      --shadow:      rgba(13,79,92,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── HERO / COVER ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 55%, #1E7A6E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    /* Crystalline SVG background pattern */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='92'%3E%3Cpolygon points='40,4 76,24 76,68 40,88 4,68 4,24' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Cpolygon points='40,18 62,30 62,62 40,74 18,62 18,30' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 80px 92px;
+      animation: shimmer 20s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 0 0; }
+      100% { background-position: 80px 184px; }
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 32px;
+      text-align: center;
+    }
+    .hero-photo-wrap {
+      width: 148px; height: 148px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 8px rgba(201,149,42,0.25), 0 8px 32px rgba(0,0,0,0.3);
+      overflow: hidden;
+      margin: 0 auto 28px;
+      background: var(--teal-mid);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo-placeholder {
+      font-size: 56px; color: rgba(255,255,255,0.5);
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+    .hero-name span { color: var(--gold-light); }
+    .hero-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .hero-affil {
+      margin-top: 6px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+    }
+    .hero-tagline {
+      margin-top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+    .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: all 0.2s;
+      background: rgba(255,255,255,0.07);
+    }
+    .hero-link:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+    .hero-cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: 11px 28px;
+      background: var(--gold);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      padding: 11px 28px;
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* ── STICKY NAV (tab bar below hero) ── */
+    #sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--teal-deep);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    /* mobile hamburger */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.4rem;
+      padding: 14px 18px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .nav-logo-mini {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      padding: 0 18px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: none;
+    }
+    .nav-tabs {
+      display: flex;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+    .nav-tabs li a {
+      display: block;
+      padding: 15px 16px;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-tabs li a:hover,
+    .nav-tabs li a.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 70px 28px;
+    }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal-deep);
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    .section-intro {
+      font-size: 1rem;
+      color: var(--slate-mid);
+      max-width: 720px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text { font-size: 0.96rem; color: var(--slate-mid); line-height: 1.85; }
+    .competency-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .competency-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+    .competency-list li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.55rem;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal-light);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .info-card-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 4px; }
+    .info-card-value { font-size: 0.88rem; font-weight: 500; color: var(--slate); }
+    .info-card-value a { color: var(--teal-mid); text-decoration: none; }
+    .info-card-value a:hover { color: var(--gold); text-decoration: underline; }
+
+    /* ── EDUCATION ── */
+    .edu-timeline { display: flex; flex-direction: column; gap: 0; }
+    .edu-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 28px;
+      position: relative;
+    }
+    .edu-item:not(:last-child) { padding-bottom: 36px; }
+    .edu-date {
+      padding-top: 4px;
+      text-align: right;
+    }
+    .edu-date-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--teal-mid);
+    }
+    .edu-date-loc {
+      font-size: 0.72rem;
+      color: var(--slate-light);
+      line-height: 1.4;
+    }
+    .edu-body {
+      border-left: 2px solid var(--border);
+      padding-left: 24px;
+      position: relative;
+    }
+    .edu-body::before {
+      content: '';
+      position: absolute;
+      left: -6px; top: 8px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--ivory);
+    }
+    .edu-degree {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--teal-deep);
+    }
+    .edu-uni { font-size: 0.85rem; color: var(--slate-mid); margin-bottom: 8px; }
+    .edu-meta { font-size: 0.82rem; color: var(--slate-mid); line-height: 1.7; }
+    .edu-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+    .badge-gold { background: #FEF3D0; color: #8B6B00; border: 1px solid #E8C94A; }
+    .badge-teal { background: #D5EDF0; color: #0D4F5C; border: 1px solid #7EC8D4; }
+    .badge-green { background: #D5EDD8; color: #1A5C2A; border: 1px solid #72C47A; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
+    .exp-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 20px;
+    }
+    @media (max-width: 600px) { .exp-item { grid-template-columns: 1fr; } }
+    .exp-period {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 600;
+      padding-top: 3px;
+      line-height: 1.4;
+    }
+    .exp-period-loc { font-size: 0.72rem; color: var(--slate-light); font-weight: 400; margin-top: 2px; }
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--teal-deep);
+    }
+    .exp-org { font-size: 0.85rem; color: var(--slate-mid); margin-bottom: 4px; }
+
+    /* ── PUBLICATIONS ── */
+    .pub-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .filter-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--slate-mid);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--teal-deep);
+      border-color: var(--teal-deep);
+      color: var(--white);
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 20px;
+      transition: box-shadow 0.2s;
+    }
+    .pub-item:hover { box-shadow: 0 4px 16px var(--shadow); }
+    .pub-num {
+      display: inline-block;
+      min-width: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .pub-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--teal-deep);
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+    .pub-authors { font-size: 0.8rem; color: var(--slate-mid); margin-top: 4px; line-height: 1.5; }
+    .pub-authors strong { color: var(--teal-mid); }
+    .pub-journal { font-size: 0.8rem; color: var(--slate-light); font-style: italic; margin-top: 4px; }
+    .pub-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+    .pub-tag {
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      background: var(--ivory-dark);
+      color: var(--slate-mid);
+    }
+    .pub-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--teal-mid);
+      text-decoration: none;
+      padding: 3px 10px;
+      border: 1px solid var(--teal-light);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .pub-link:hover { background: var(--teal-deep); color: var(--white); border-color: var(--teal-deep); }
+    .pub-status-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 12px;
+      background: #FFF3CD;
+      color: #856404;
+      border: 1px solid #FFD980;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .skill-card-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--teal-deep);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-card-title span { font-size: 1.1rem; }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-tag {
+      background: var(--ivory-dark);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 9px;
+      font-size: 0.73rem;
+      color: var(--slate);
+    }
+
+    /* ── CONFERENCES ── */
+    .conf-list { display: flex; flex-direction: column; gap: 12px; }
+    .conf-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      align-items: flex-start;
+    }
+    .conf-year {
+      flex-shrink: 0;
+      width: 44px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+    .conf-body { flex: 1; }
+    .conf-name { font-size: 0.88rem; font-weight: 500; color: var(--teal-deep); }
+    .conf-details { font-size: 0.78rem; color: var(--slate-light); margin-top: 2px; }
+    .conf-type {
+      flex-shrink: 0;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+    .type-oral { background: #D0F0E8; color: #0D5C44; }
+    .type-poster { background: #D5EDF0; color: #0D4F5C; }
+    .type-attend { background: var(--ivory-dark); color: var(--slate-mid); }
+
+    /* ── AWARDS ── */
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .award-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .award-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .award-year { font-size: 0.72rem; color: var(--gold); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .award-name { font-size: 0.88rem; font-weight: 600; color: var(--teal-deep); line-height: 1.4; }
+    .award-from { font-size: 0.78rem; color: var(--slate-light); margin-top: 2px; }
+
+    /* ── LANGUAGES ── */
+    .lang-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .lang-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-align: center;
+      min-width: 110px;
+    }
+    .lang-name { font-weight: 600; color: var(--teal-deep); font-size: 0.9rem; }
+    .lang-level {
+      font-size: 0.72rem;
+      color: var(--slate-light);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .lang-dots { display: flex; gap: 4px; justify-content: center; margin-top: 8px; }
+    .lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .lang-dot.filled { background: var(--gold); }
+
+    /* ── REFERENCES ── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .ref-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--teal-light);
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .ref-name { font-weight: 700; color: var(--teal-deep); font-size: 0.92rem; margin-bottom: 4px; }
+    .ref-title { font-size: 0.8rem; color: var(--slate-mid); line-height: 1.5; }
+    .ref-email {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--teal-mid);
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .ref-email:hover { color: var(--gold); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--teal-deep); }
+    .contact-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 70px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    @media (max-width: 680px) { .contact-inner { grid-template-columns: 1fr; } }
+    .contact-head { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .contact-sub { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+    .contact-items { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-item-icon { font-size: 1.1rem; margin-top: 2px; }
+    .contact-item-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 3px; }
+    .contact-item-val { font-size: 0.88rem; color: rgba(255,255,255,0.8); }
+    .contact-item-val a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    .contact-item-val a:hover { color: var(--gold-light); }
+    .contact-profiles { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+    .contact-profile-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: all 0.2s;
+    }
+    .contact-profile-link:hover { background: rgba(201,149,42,0.2); border-color: var(--gold); color: var(--white); }
+    .footer-bar {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .hero-stat-num { font-size: 1.5rem; }
+      .hero-stats { gap: 20px; }
+      .nav-toggle { display: block; }
+      .nav-logo-mini { display: block; }
+      .nav-tabs { display: none; flex-direction: column; width: 100%; }
+      .nav-tabs.open { display: flex; }
+      .nav-tabs li a { padding: 12px 20px; border-bottom: none; border-left: 3px solid transparent; }
+      .nav-tabs li a:hover, .nav-tabs li a.active { border-left-color: var(--gold); border-bottom: none; }
+    }
+
+    /* ── UTIL ── */
+    .divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .gold-text { color: var(--gold); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+    .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-chip {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      background: var(--ivory-dark);
+      color: var(--slate);
+      border: 1px solid var(--border);
+    }
+    .inline-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .inline-list li { font-size: 0.88rem; color: var(--slate-mid); display: flex; gap: 8px; align-items: flex-start; }
+    .inline-list li::before { content: '›'; color: var(--gold); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <!-- Replace this placeholder with your actual photo:
+           <img src="photo.jpg" alt="Dr. Anjuman Ara Khatun" />
+           See the guide file for instructions. -->
+      <div class="hero-photo-placeholder">👩‍🔬</div>
+    </div>
+    <h1 class="hero-name">Anjuman Ara <span>Khatun</span>, PhD</h1>
+    <p class="hero-title">Materials Scientist &amp; R&amp;D Engineer</p>
+    <p class="hero-affil">Nakaya Co. Ltd, Yamanashi, Japan &nbsp;·&nbsp; University of Yamanashi</p>
+    <p class="hero-tagline">"Advancing materials science through crystallography, ceramics, and biodegradable polymer research."</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">15</div><div class="hero-stat-label">Publications</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3+</div><div class="hero-stat-label">Countries</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Conferences</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Degrees</div></div>
+    </div>
+    <div class="hero-links">
+      <a class="hero-link" href="https://scholar.google.com/citations?user=w0ccYEQAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
+      <a class="hero-link" href="https://orcid.org/0009-0009-2508-024X" target="_blank">🆔 ORCID</a>
+      <a class="hero-link" href="https://github.com/anjuman1497" target="_blank">💻 GitHub</a>
+      <a class="hero-link" href="mailto:anjumanarapd@gmail.com">✉ Email</a>
+    </div>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#publications">View Publications</a>
+      <a class="btn-outline" href="CV_Anjuman_Ara_Khatun.pdf" download>Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STICKY NAV ═══ -->
+<nav id="sticky-nav">
+  <div class="nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+    <span class="nav-logo-mini">Dr. A. Khatun</span>
+    <ul class="nav-tabs" id="navTabs">
+      <li><a href="#about" onclick="closeNav()">About</a></li>
+      <li><a href="#education" onclick="closeNav()">Education</a></li>
+      <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+      <li><a href="#publications" onclick="closeNav()">Publications</a></li>
+      <li><a href="#ongoing" onclick="closeNav()">Ongoing</a></li>
+      <li><a href="#conferences" onclick="closeNav()">Conferences</a></li>
+      <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+      <li><a href="#awards" onclick="closeNav()">Awards</a></li>
+      <li><a href="#community" onclick="closeNav()">Community</a></li>
+      <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Professional Profile</h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-text">
+          I am a materials scientist and R&amp;D engineer with a Doctor of Philosophy in Energy Materials Science from the
+          University of Yamanashi, Japan (2024), supported by the prestigious Japanese Government MEXT Scholarship.
+          My research spans ceramic materials, crystal science, biodegradable polymers, and computational
+          materials research using Density Functional Theory (DFT).
+        </p>
+        <br/>
+        <p class="about-text">
+          Currently serving as an R&amp;D Engineer at Nakaya Co. Ltd in Yamanashi, Japan, I bring extensive experience
+          in advanced characterization techniques, materials synthesis, and scientific publication. My work bridges
+          fundamental materials science with applied engineering, including electron beam welding and photocatalytic
+          materials. I aspire to contribute to impactful academic and industrial research addressing global challenges.
+        </p>
+      </div>
+      <div>
+        <ul class="competency-list">
+          <li>Biomedical Engineering, Polymer Materials, and Biodegradable Polymers</li>
+          <li>Density Functional Theory (DFT) calculations and computational materials research</li>
+          <li>Synthesis, processing, and characterization of ceramic materials, metal alloys, and composites</li>
+          <li>Advanced joining technologies — Electron Beam Welding and Laser Welding</li>
+          <li>Scientific writing, peer-reviewed publication, and research dissemination</li>
+          <li>Student supervision, academic mentoring, and teaching support</li>
+          <li>Research proposal development and grant writing</li>
+          <li>Experimental design, data analysis, and engineering problem-solving</li>
+          <li>Proficient in characterization instruments and scientific software for materials analysis</li>
+          <li>Strong leadership, teamwork, critical thinking, and communication skills</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-label">Current Position</div>
+        <div class="info-card-value">R&amp;D Engineer, Nakaya Co. Ltd</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Location</div>
+        <div class="info-card-value">Kofu, Yamanashi, Japan</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Email</div>
+        <div class="info-card-value"><a href="mailto:anjumanarapd@gmail.com">anjumanarapd@gmail.com</a></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">ORCID</div>
+        <div class="info-card-value"><a href="https://orcid.org/0009-0009-2508-024X" target="_blank">0009-0009-2508-024X</a></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Google Scholar</div>
+        <div class="info-card-value"><a href="https://scholar.google.com/citations?user=w0ccYEQAAAAJ&hl=en" target="_blank">View Profile →</a></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Phone</div>
+        <div class="info-card-value">+81 7089702656</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="section">
+    <p class="section-label">Academic Background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-timeline">
+
+      <div class="edu-item">
+        <div class="edu-date">
+          <div class="edu-date-year">Mar 2024</div>
+          <div class="edu-date-loc">Yamanashi<br/>Japan</div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">Doctor of Philosophy (PhD)</div>
+          <div class="edu-uni">Energy Materials Science, Department of Engineering · University of Yamanashi, Japan</div>
+          <div class="edu-meta">
+            <strong>Thesis:</strong> Study on solid solution and characterization of substituted niobate columbite with di- and trivalent cations<br/>
+            <strong>Result:</strong> 3.60 / 4.00
+          </div>
+          <span class="edu-badge badge-gold">🏅 MEXT Scholarship (Full Funding)</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">
+          <div class="edu-date-year">Sep 2018</div>
+          <div class="edu-date-loc">Rajshahi<br/>Bangladesh</div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">Master of Science (M.Sc.)</div>
+          <div class="edu-uni">Materials Science and Engineering · University of Rajshahi, Bangladesh</div>
+          <div class="edu-meta">
+            <strong>Thesis:</strong> Synthesis and characterization of pH responsive poly (Maleic acid-co-Malic acid-co-Butane-1,4-diol-co-Adipic acid)<br/>
+            <strong>Result:</strong> 3.65 / 4.00
+          </div>
+          <span class="edu-badge badge-teal">🏅 NST Fellowship (Full Funding)</span>
+          <span class="edu-badge badge-green">✨ Certificate of Excellence from Dean</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">
+          <div class="edu-date-year">Aug 2016</div>
+          <div class="edu-date-loc">Rajshahi<br/>Bangladesh</div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">Bachelor of Science (B.Sc.)</div>
+          <div class="edu-uni">Materials Science and Engineering · University of Rajshahi, Bangladesh</div>
+          <div class="edu-meta">
+            <strong>Research Project:</strong> Nanotechnology for pollution control
+          </div>
+          <span class="edu-badge badge-teal">University Scholarship</span>
+          <span class="edu-badge badge-green">Certificate of Excellence from Dean</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">
+          <div class="edu-date-year">Jul 2009</div>
+          <div class="edu-date-loc">Dinajpur<br/>Bangladesh</div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">Higher Secondary Certificate (H.S.C.)</div>
+          <div class="edu-uni">Dinajpur Government College, Dinajpur</div>
+          <div class="edu-meta"><strong>Result:</strong> 5.00 / 5.00 — Outstanding Academic Performance</div>
+          <span class="edu-badge badge-gold">Government Merit Scholarship</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-date">
+          <div class="edu-date-year">Jun 2007</div>
+          <div class="edu-date-loc">Dinajpur<br/>Bangladesh</div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">Secondary School Certificate (S.S.C.)</div>
+          <div class="edu-uni">Dinajpur Government Girls High School, Dinajpur</div>
+          <div class="edu-meta"><strong>Result:</strong> 5.00 / 5.00 — Outstanding Academic Performance</div>
+          <span class="edu-badge badge-gold">Government Merit Scholarship</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
+  <div class="section">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Research &amp; Work Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-period">Nov 2024 – Present<div class="exp-period-loc">Yamanashi, Japan</div></div>
+        <div>
+          <div class="exp-role">Research and Development Engineer</div>
+          <div class="exp-org">Nakaya Co. Ltd, Yamanashi, Japan</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Sep 2024 – Nov 2024<div class="exp-period-loc">Yamanashi, Japan</div></div>
+        <div>
+          <div class="exp-role">Lecturer in Mathematics</div>
+          <div class="exp-org">International School — The American School in Kofu, Japan</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Apr 2024 – Sep 2024<div class="exp-period-loc">Yamanashi, Japan</div></div>
+        <div>
+          <div class="exp-role">Postdoctoral Researcher</div>
+          <div class="exp-org">Center for Crystal Science and Technology, University of Yamanashi, Japan</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Oct 2021 – Mar 2024<div class="exp-period-loc">Yamanashi, Japan</div></div>
+        <div>
+          <div class="exp-role">Research Student &amp; Advisor for Junior Students</div>
+          <div class="exp-org">Department of Energy Materials Science, University of Yamanashi, Japan</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Apr 2021 – Sep 2023<div class="exp-period-loc">Yamanashi, Japan</div></div>
+        <div>
+          <div class="exp-role">Student Assistant (Lecturer)</div>
+          <div class="exp-org">Center for Language Education (English Café), University of Yamanashi, Japan</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Oct 2018 – Mar 2021<div class="exp-period-loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Research Student &amp; Advisor for Junior Students</div>
+          <div class="exp-org">Nanomaterials and Ceramic Engineering, BUET, Bangladesh</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Oct 2018 – Mar 2021<div class="exp-period-loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Sub-editor</div>
+          <div class="exp-org">Daily English Newspaper — The Asian Age, Dhaka, Bangladesh</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Jan 2018 – Sep 2018<div class="exp-period-loc">Rajshahi, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Research Assistant &amp; Advisor for Undergraduate Students</div>
+          <div class="exp-org">Simulation and Functional Ceramic Lab, Materials Science and Engineering, University of Rajshahi</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Mar 2018 – Sep 2018<div class="exp-period-loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Branch Manager</div>
+          <div class="exp-org">Sunshine Insurance Company Ltd., Bangladesh</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Sep 2016 – Sep 2018<div class="exp-period-loc">Rajshahi, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Research Student &amp; Advisor for Undergraduate Students</div>
+          <div class="exp-org">Eco-Friendly and Biodegradable Polymeric Materials Lab, University of Rajshahi</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">Aug 2015 – Sep 2018<div class="exp-period-loc">Rajshahi, Bangladesh</div></div>
+        <div>
+          <div class="exp-role">Lecturer</div>
+          <div class="exp-org">Romen English Academy, Rajshahi, Bangladesh</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<section id="publications">
+  <div class="section">
+    <p class="section-label">Research Output</p>
+    <h2 class="section-title">Peer-Reviewed Publications</h2>
+    <div class="pub-filter">
+      <button class="filter-btn active" onclick="filterPubs('all', this)">All (15)</button>
+      <button class="filter-btn" onclick="filterPubs('ceramics', this)">Ceramics &amp; Inorganic</button>
+      <button class="filter-btn" onclick="filterPubs('polymer', this)">Polymer Science</button>
+      <button class="filter-btn" onclick="filterPubs('dft', this)">DFT / Computational</button>
+      <button class="filter-btn" onclick="filterPubs('photocatalysis', this)">Photocatalysis</button>
+    </div>
+    <div class="pub-list" id="pubList">
+
+      <div class="pub-item" data-tags="photocatalysis">
+        <span class="pub-num">[15]</span>
+        <div class="pub-title">The synergistic effect of Fe₃O₄/g-C₃N₄ for persulfate activation in sulfate radical photo-Fenton</div>
+        <div class="pub-authors">Permana M.D., Takei T., <strong>Khatun A.A.</strong>, Saito N., Kumada N.</div>
+        <div class="pub-journal">Colloids and Surfaces A: Physicochemical and Engineering Aspects, Vol. 720, 137110 (2025)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Photocatalysis</span>
+          <span class="pub-tag">Fenton</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.colsurfa.2025.137110" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="renewable">
+        <span class="pub-num">[14]</span>
+        <div class="pub-title">Integrating Renewable Energy with IoT: Pathways to a Smart Green Planet</div>
+        <div class="pub-authors">Mia S., Ahmed F., Khan I., Kabir M.I., Roni M.H., Cobra K., <strong>Khatun A.A.</strong>, Mahmud S.</div>
+        <div class="pub-journal">Kufa Journal of Engineering, 16(1), 361–404 (2025)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">IoT</span>
+          <span class="pub-tag">Renewable Energy</span>
+          <a class="pub-link" href="https://doi.org/10.30572/2018/KJE/160121" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="polymer">
+        <span class="pub-num">[13]</span>
+        <div class="pub-title">pH-Sensitive Biodegradability of Poly(Maleic acid-co-Malic acid-co-Butane-1,4-diol-co-Adipic acid) for Smart Release of Fertilizers</div>
+        <div class="pub-authors">Mahmud A., <strong>Khatun A.A.</strong>, Matin M.A., Chowdhury M.N., Hoque M.A.</div>
+        <div class="pub-journal">Journal of Composites and Biodegradable Polymers, Vol. 12, 34–40 (2024)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Biodegradable Polymer</span>
+          <span class="pub-tag">Smart Release</span>
+          <a class="pub-link" href="https://doi.org/10.12974/2311-8717.2024.12.04" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="photocatalysis">
+        <span class="pub-num">[12]</span>
+        <div class="pub-title">Effect of wavelength in light irradiation for Fe²⁺/Fe³⁺ redox cycle of Fe₃O₄/g-C₃N₄ in photocatalysis and photo Fenton systems</div>
+        <div class="pub-authors">Permana M.D., Takei T., <strong>Khatun A.A.</strong>, Saito N., Kumada N.</div>
+        <div class="pub-journal">Journal of Photochemistry and Photobiology A: Chemistry, 457, 115876 (2024)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Photocatalysis</span>
+          <span class="pub-tag">Iron Oxide</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.jphotochem.2024.115876" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="dft">
+        <span class="pub-num">[11]</span>
+        <div class="pub-title">DFT study on the structural, mechanical, electronic, optical and thermodynamic properties of recently synthesized MAX Phase compounds A₃InC₂ (A = Zr, Hf)</div>
+        <div class="pub-authors">Khatun R., Atik M.A.R., Roy D.C., <strong>Khatun A.A.</strong>, et al.</div>
+        <div class="pub-journal">Materials Today Communications, Vol. 40, 109964 (2024)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">DFT</span>
+          <span class="pub-tag">MAX Phase</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.mtcomm.2024.109964" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="ceramics photocatalysis">
+        <span class="pub-num">[10]</span>
+        <div class="pub-title">Effect of silver hybridization on magnesium and calcium niobate: properties, photocatalytic and antibacterial activity</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong>, Takei T., Permana M.D., Saito N., Kumada N.</div>
+        <div class="pub-journal">Journal of Society of Inorganic Materials, Japan, 31, 119–126 (2024)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Niobate</span>
+          <span class="pub-tag">Antibacterial</span>
+          <a class="pub-link" href="https://doi.org/10.11451/mukimate.31.430_119" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="ceramics">
+        <span class="pub-num">[9]</span>
+        <div class="pub-title">Study on Preparation and Characterization of Orthorhombic Euxenite-Type Solid Solutions between TbNbTiO₆ and DyNbTiO₆</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong>, Takei T., Permana M.D., Saito N., Kumada N.</div>
+        <div class="pub-journal">Journal of the Ceramic Society of Japan, 132(4), 178–183 (2024)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Euxenite</span>
+          <span class="pub-tag">Solid Solution</span>
+          <a class="pub-link" href="https://doi.org/10.2109/jcersj2.23182" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="ceramics">
+        <span class="pub-num">[8]</span>
+        <div class="pub-title">Synthesis and characterization of columbite type solid solution structured niobate Mg₁₋ₓCaₓNb₂O₆</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong>, Takei T., Permana M.D., Saito N., Kumada N.</div>
+        <div class="pub-journal">Journal of the Ceramic Society of Japan, 131(8), 355–362 (2023)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Columbite</span>
+          <span class="pub-tag">Niobate</span>
+          <a class="pub-link" href="https://doi.org/10.2109/jcersj2.23026" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="polymer">
+        <span class="pub-num">[7]</span>
+        <div class="pub-title">Synthesis and Characterization of Stimuli-Responsive Poly (Maleic Acid-Co-Malic Acid-Co-Propane-1,2-Diol-Co-Adipic Acid)</div>
+        <div class="pub-authors">Matin M.A., Chowdhury M.N., <strong>Khatun A.A.</strong>, Mahmud A., Nasrin J., Mahmud A.</div>
+        <div class="pub-journal">European Journal of Applied Sciences, 11(2) (2023)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Stimuli-Responsive</span>
+          <span class="pub-tag">Polymer</span>
+          <a class="pub-link" href="https://doi.org/10.14738/aivp.112.14193" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="dft">
+        <span class="pub-num">[6]</span>
+        <div class="pub-title">Analyzing the physical properties of perovskite oxides BaMO₃ (M = Ru, Os) for predicting potential applications</div>
+        <div class="pub-authors">Hossain K.M., Mitro S.K., Rahman M.M., <strong>Khatun A.A.</strong>, et al.</div>
+        <div class="pub-journal">Computational Condensed Matter, 34, e00782 (2023)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Perovskite</span>
+          <span class="pub-tag">DFT</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.cocom.2022.e00782" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="dft">
+        <span class="pub-num">[5]</span>
+        <div class="pub-title">First-principles calculations to investigate structural, elastic, electronic, thermodynamic, and thermoelectric properties of CaPd₃B₄O₁₂ (B = Ti, V) perovskites</div>
+        <div class="pub-authors">Rubel M.H.K., Hossain M.A., Hossain M.K., Hossain K.M., <strong>Khatun A.A.</strong>, et al.</div>
+        <div class="pub-journal">Results in Physics, Vol. 42, 105977 (2022)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">First-Principles</span>
+          <span class="pub-tag">Thermoelectric</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.rinp.2022.105977" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="dft">
+        <span class="pub-num">[4]</span>
+        <div class="pub-title">Mechanical, electronic, optical and thermodynamic properties of orthorhombic LiCuBiO₄ crystal: A first-principles study</div>
+        <div class="pub-authors">Rahaman M.M., Rubel M.H.K., Rashid M.A., Alam M.A., Hossain K.M., <strong>Khatun A.A.</strong>, et al.</div>
+        <div class="pub-journal">Journal of Materials Research and Technology, 8(5), 3783–3794 (2019)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Crystal</span>
+          <span class="pub-tag">Optical Properties</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.jmrt.2019.06.039" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="">
+        <span class="pub-num">[3]</span>
+        <div class="pub-title">Removal of chromium from tannery effluents using egg and snail shells</div>
+        <div class="pub-authors">Hossain M.N., Islam M.D., Rahaman A., Hena M.A., <strong>Khatun A.A.</strong>, Matin M.A.</div>
+        <div class="pub-journal">Proc. 1st Int. Conference on Sustainability in Natural and Built Environment (iCSNBE 2019)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Environmental Science</span>
+          <span class="pub-tag">Conference Proc.</span>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="">
+        <span class="pub-num">[2]</span>
+        <div class="pub-title">Experimental Behavior of Bituminous Mixes with Waste Concrete Aggregate</div>
+        <div class="pub-authors">Hossain M.R., <strong>Khatun A.A.</strong>, Ahmed M.F., Faroque M.O., Sobahan M.A.</div>
+        <div class="pub-journal">International Journal of Educational Researchers, 9(3), 32–50 (2018)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Civil Engineering</span>
+        </div>
+      </div>
+
+      <div class="pub-item" data-tags="polymer">
+        <span class="pub-num">[1]</span>
+        <div class="pub-title">Polymerization Kinetics, Biodegradation and pH-Responsive Behavior of Poly [(Citric Acid-co-PEG-400)-Ran-(Glycerol)]</div>
+        <div class="pub-authors">Matin M.A., Mahmud A., Islam M.N., <strong>Khatun A.A.</strong>, Chowdhury M.N.</div>
+        <div class="pub-journal">Journal of Composites and Biodegradable Polymers, 6, 20–27 (2018)</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Biodegradable</span>
+          <span class="pub-tag">Polymerization</span>
+          <a class="pub-link" href="https://doi.org/10.12974/2311-8717.2018.06.3" target="_blank">DOI →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ONGOING ═══ -->
+<section id="ongoing">
+  <div class="section">
+    <p class="section-label">Active Research</p>
+    <h2 class="section-title">Ongoing Projects</h2>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-title">A comprehensive review of electron beam welding of aluminum alloys 5052 and 6061: metallurgical behavior, mechanical properties, and industrial applications</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong>, Khan M.A., Wakesa S.</div>
+        <div class="pub-tags"><span class="pub-status-badge">Under Review</span><span class="pub-tag">Electron Beam Welding</span><span class="pub-tag">Aluminum Alloys</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">A Validated Reanalysis-Based and Geospatial Framework for Climate-Relevant Wind Energy Assessment and Planning in Pakistan</div>
+        <div class="pub-authors">Khan M.A., <strong>Khatun A.A.</strong>, Dairaku K.</div>
+        <div class="pub-journal">Q1 Journal · Impact Factor ~9.0</div>
+        <div class="pub-tags"><span class="pub-status-badge">Under Review</span><span class="pub-tag">Wind Energy</span><span class="pub-tag">Geospatial</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Effect of Titanium and Tungsten on Magnesium and Calcium Niobate: Properties and Photocatalytic Activity</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong>, Takei T., Permana M.D., Saito N., Kumada N.</div>
+        <div class="pub-tags"><span class="pub-status-badge">In Preparation</span><span class="pub-tag">Niobate</span><span class="pub-tag">Photocatalysis</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Optimizing EBW Parameter Settings and Welding Modes for Efficient and Perfect Welding</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong></div>
+        <div class="pub-tags"><span class="pub-status-badge">In Preparation</span><span class="pub-tag">EBW</span><span class="pub-tag">Welding</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Sustainable Development of Biodegradable Disposable Tableware from Banana Biomass: A Review</div>
+        <div class="pub-authors"><strong>Khatun A.A.</strong></div>
+        <div class="pub-tags"><span class="pub-status-badge">In Preparation</span><span class="pub-tag">Biomass</span><span class="pub-tag">Sustainability</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Transforming Livelihoods Through Training, Research, Innovation, and Entrepreneurship for Sustainable Development</div>
+        <div class="pub-tags"><span class="pub-status-badge">Supervising</span><span class="pub-tag">Sustainability</span><span class="pub-tag">Entrepreneurship</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONFERENCES ═══ -->
+<section id="conferences">
+  <div class="section">
+    <p class="section-label">Scientific Engagement</p>
+    <h2 class="section-title">Conferences, Seminars &amp; Workshops</h2>
+    <div class="conf-list">
+
+      <div class="conf-item">
+        <div class="conf-year">2023</div>
+        <div class="conf-body">
+          <div class="conf-name">61st Symposium on Basic Science of Ceramics</div>
+          <div class="conf-details">Okayama University, Japan</div>
+        </div>
+        <span class="conf-type type-oral">Oral</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2023</div>
+        <div class="conf-body">
+          <div class="conf-name">International Conference on Electronics and Informatics</div>
+          <div class="conf-details">Atomic Energy Commission, Bangladesh</div>
+        </div>
+        <span class="conf-type type-oral">Oral</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2024</div>
+        <div class="conf-body">
+          <div class="conf-name">University–Company Joint Workshop</div>
+          <div class="conf-details">University of Yamanashi, Japan</div>
+        </div>
+        <span class="conf-type type-attend">Attended</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2019</div>
+        <div class="conf-body">
+          <div class="conf-name">International Conference on Sustainability in Built and Natural Environment</div>
+          <div class="conf-details">Dhaka, Bangladesh</div>
+        </div>
+        <span class="conf-type type-attend">Attended</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2018</div>
+        <div class="conf-body">
+          <div class="conf-name">International Conference on Advances in Computing, Electronics and Communication</div>
+          <div class="conf-details">Kuala Lumpur, Malaysia</div>
+        </div>
+        <span class="conf-type type-oral">Oral</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2018</div>
+        <div class="conf-body">
+          <div class="conf-name">Inter University Scientific Poster Presentation Competition</div>
+          <div class="conf-details">BUET, Bangladesh</div>
+        </div>
+        <span class="conf-type type-poster">Poster</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2017</div>
+        <div class="conf-body">
+          <div class="conf-name">International conference on computer, communication, chemical, materials, electronics &amp; information engineering</div>
+          <div class="conf-details">University of Rajshahi, Bangladesh</div>
+        </div>
+        <span class="conf-type type-attend">Attended</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2017</div>
+        <div class="conf-body">
+          <div class="conf-name">Thermal Analysis of Materials by Differential Scanning Calorimetry (DSC)</div>
+          <div class="conf-details">University of Rajshahi, Bangladesh — Training Workshop</div>
+        </div>
+        <span class="conf-type type-attend">Training</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2016</div>
+        <div class="conf-body">
+          <div class="conf-name">Conference on Materials Science and Nano-Electrochemistry</div>
+          <div class="conf-details">Bangladesh</div>
+        </div>
+        <span class="conf-type type-attend">Attended</span>
+      </div>
+
+      <div class="conf-item">
+        <div class="conf-year">2016</div>
+        <div class="conf-body">
+          <div class="conf-name">Workshop on Self-Assessment Program and Art of Presentation</div>
+          <div class="conf-details">University of Rajshahi, Bangladesh</div>
+        </div>
+        <span class="conf-type type-attend">Workshop</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills">
+  <div class="section">
+    <p class="section-label">Technical Proficiency</p>
+    <h2 class="section-title">Skills &amp; Expertise</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🔬</span> Materials Characterization &amp; Spectroscopy</div>
+        <div class="skill-tags">
+          <span class="skill-tag">XRD</span>
+          <span class="skill-tag">FTIR</span>
+          <span class="skill-tag">Raman</span>
+          <span class="skill-tag">UV-Vis</span>
+          <span class="skill-tag">XAS / XAFS</span>
+          <span class="skill-tag">PL Spectroscopy</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🖥️</span> Microscopy &amp; Surface Analysis</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SEM</span>
+          <span class="skill-tag">TEM</span>
+          <span class="skill-tag">AFM</span>
+          <span class="skill-tag">EDS</span>
+          <span class="skill-tag">Laser Microscopy</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🌡️</span> Thermal &amp; Physicochemical Analysis</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TGA / TG-DTA</span>
+          <span class="skill-tag">HPLC</span>
+          <span class="skill-tag">Gas Chromatography</span>
+          <span class="skill-tag">pH Measurement</span>
+          <span class="skill-tag">Density Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>⚙️</span> Mechanical Testing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Hydraulic Tensile Testing</span>
+          <span class="skill-tag">Rockwell Hardness</span>
+          <span class="skill-tag">Vickers Hardness</span>
+          <span class="skill-tag">Pressure Leak Testing</span>
+          <span class="skill-tag">CMM</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>💻</span> Computational &amp; Software</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Materials Studio (DFT)</span>
+          <span class="skill-tag">VESTA</span>
+          <span class="skill-tag">FullProf Suite</span>
+          <span class="skill-tag">OriginPro</span>
+          <span class="skill-tag">HighScore Plus</span>
+          <span class="skill-tag">ImageJ</span>
+          <span class="skill-tag">ANSYS</span>
+          <span class="skill-tag">AutoCAD</span>
+          <span class="skill-tag">SolidWorks</span>
+          <span class="skill-tag">Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🧪</span> Materials Processing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Ball Milling</span>
+          <span class="skill-tag">Furnace / Heat Treatment</span>
+          <span class="skill-tag">Sample Polishing</span>
+          <span class="skill-tag">Electron Beam Welding</span>
+          <span class="skill-tag">Laser Welding</span>
+        </div>
+      </div>
+
+    </div>
+
+    <br/>
+    <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.3rem;margin-bottom:16px;">Industrial Training &amp; Internships</h3>
+    <div class="conf-list">
+      <div class="conf-item"><div class="conf-year">2025</div><div class="conf-body"><div class="conf-name">Mitsubishi Electric Corporation, Japan</div></div></div>
+      <div class="conf-item"><div class="conf-year">2025</div><div class="conf-body"><div class="conf-name">Tada Electronic Co. Ltd., Japan</div></div></div>
+      <div class="conf-item"><div class="conf-year">2025</div><div class="conf-body"><div class="conf-name">Tosei Electronbeam Co. Ltd., Japan</div></div></div>
+      <div class="conf-item"><div class="conf-year">2023</div><div class="conf-body"><div class="conf-name">Sannichi YBS Group, Yamanashi, Japan</div></div></div>
+      <div class="conf-item"><div class="conf-year">2023</div><div class="conf-body"><div class="conf-name">Nippo Precision Co. Ltd., Yamanashi, Japan</div></div></div>
+      <div class="conf-item"><div class="conf-year">2021</div><div class="conf-body"><div class="conf-name">Panchagarh Sugar Mills Ltd., Bangladesh</div></div></div>
+      <div class="conf-item"><div class="conf-year">2014</div><div class="conf-body"><div class="conf-name">Sopura Silk Mills Ltd, Rajshahi, Bangladesh</div></div></div>
+      <div class="conf-item"><div class="conf-year">2014</div><div class="conf-body"><div class="conf-name">Shinepukur Ceramics Limited (SCL), BEXIMCO Industrial Park, Dhaka</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section id="awards">
+  <div class="section">
+    <p class="section-label">Recognition</p>
+    <h2 class="section-title">Scholarships, Fellowships &amp; Awards</h2>
+    <div class="award-grid">
+      <div class="award-item"><div class="award-icon">🏅</div><div><div class="award-year">2020</div><div class="award-name">Japanese Government Scholarship (MEXT)</div><div class="award-from">For PhD study, Japan</div></div></div>
+      <div class="award-item"><div class="award-icon">🏅</div><div><div class="award-year">2015</div><div class="award-name">Bangladesh Government Fellowship (NST)</div><div class="award-from">For M.Sc. study</div></div></div>
+      <div class="award-item"><div class="award-icon">🎓</div><div><div class="award-year">2015</div><div class="award-name">University Scholarship for M.Sc.</div><div class="award-from">University of Rajshahi, Bangladesh</div></div></div>
+      <div class="award-item"><div class="award-icon">🎓</div><div><div class="award-year">2011</div><div class="award-name">University Scholarship for B.Sc.</div><div class="award-from">University of Rajshahi, Bangladesh</div></div></div>
+      <div class="award-item"><div class="award-icon">⭐</div><div><div class="award-year">2009</div><div class="award-name">Dinajpur Board Scholarship (H.S.C.)</div><div class="award-from">Outstanding academic performance, Bangladesh</div></div></div>
+      <div class="award-item"><div class="award-icon">⭐</div><div><div class="award-year">2007</div><div class="award-name">Rajshahi Board Scholarship (S.S.C.)</div><div class="award-from">Outstanding academic performance, Bangladesh</div></div></div>
+      <div class="award-item"><div class="award-icon">🏆</div><div><div class="award-year">2012</div><div class="award-name">Awards from Extra-Curricular Activities</div><div class="award-from">University of Rajshahi, Bangladesh</div></div></div>
+      <div class="award-item"><div class="award-icon">🏆</div><div><div class="award-year">2003–05</div><div class="award-name">Math Olympiad District Winner &amp; Government Scholarship</div><div class="award-from">School Level, Bangladesh</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section id="community">
+  <div class="section">
+    <p class="section-label">Service &amp; Mentorship</p>
+    <h2 class="section-title">Contribution to Research Community</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.2rem;margin-bottom:14px;">Editorial &amp; Peer Review</h3>
+        <ul class="inline-list">
+          <li>Editorial Board Member — International Journal of Material Science</li>
+          <li>Reviewer — Journal of Materials Science &amp; Engineering A (2026)</li>
+          <li>Reviewer — American Journal of Materials Synthesis and Processing (2025)</li>
+          <li>Reviewer — Journal of Engineering Research and Reviews (2025)</li>
+        </ul>
+        <br/>
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.2rem;margin-bottom:14px;">Supervisory Roles</h3>
+        <ul class="inline-list">
+          <li>Co-Supervisor: AI for Predictive Maintenance — Jomo Kenyatta University of Agriculture and Technology, Kenya</li>
+          <li>Co-Supervisor: DFT-Based study of Ba₂MZO₆ — Pabna University of Science and Technology, Bangladesh</li>
+          <li>Co-Supervisor: DFT calculation Perovskites — University of Rajshahi, Bangladesh</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.2rem;margin-bottom:14px;">Languages</h3>
+        <div class="lang-grid">
+          <div class="lang-item">
+            <div class="lang-name">English</div>
+            <div class="lang-level">Fluent</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Bengali</div>
+            <div class="lang-level">Native</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Hindi</div>
+            <div class="lang-level">Fluent</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Urdu</div>
+            <div class="lang-level">Fluent</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Japanese</div>
+            <div class="lang-level">Moderate</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Arabic</div>
+            <div class="lang-level">Basic</div>
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div><div class="lang-dot"></div>
+              <div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <br/>
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.2rem;margin-bottom:14px;">Extra-Curricular</h3>
+        <ul class="inline-list">
+          <li>Active member of the Debate Team — GOLD Bangladesh, University of Rajshahi</li>
+          <li>Member, Rajshahi University Higher Study Club (RUHSC)</li>
+          <li>Member, Rajshahi University Engineering Club (RUEC)</li>
+          <li>Volunteer, Badhon blood donation organization</li>
+          <li>Cultural Organizer — Bissobiddaloy Theater Rajshahi (BTR)</li>
+        </ul>
+      </div>
+    </div>
+
+    <br/>
+    <h3 style="font-family:'Cormorant Garamond',serif;color:var(--teal-deep);font-size:1.2rem;margin-bottom:16px;">References</h3>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-name">Prof. Dr. Takahiro Takei</div>
+        <div class="ref-title">Center for Crystal Science and Technology<br/>University of Yamanashi, Japan</div>
+        <a class="ref-email" href="mailto:takei@yamanashi.ac.jp">takei@yamanashi.ac.jp</a>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Assoc. Prof. Dr. Emrul Kayesh</div>
+        <div class="ref-title">Department of Materials Science and Engineering<br/>University of Rajshahi, Bangladesh</div>
+        <a class="ref-email" href="mailto:ek_mse@ru.ac.bd">ek_mse@ru.ac.bd</a>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Prof. Dr. Mirza Humaun Kabir Rubel</div>
+        <div class="ref-title">Department of Materials Science and Engineering<br/>University of Rajshahi, Bangladesh</div>
+        <a class="ref-email" href="mailto:mhk_mse@ru.ac.bd">mhk_mse@ru.ac.bd</a>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Prof. Dr. Md. Abdul Matin</div>
+        <div class="ref-title">Department of Materials Science and Engineering<br/>University of Rajshahi, Bangladesh</div>
+        <a class="ref-email" href="mailto:matinmst@ru.ac.bd">matinmst@ru.ac.bd</a>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Prof. Dr. Abu Mahmud</div>
+        <div class="ref-title">Department of Materials Science and Engineering<br/>University of Rajshahi, Bangladesh</div>
+        <a class="ref-email" href="mailto:mahmud.matsc@ru.ac.bd">mahmud.matsc@ru.ac.bd</a>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Dr. Muhammad Abid Khan</div>
+        <div class="ref-title">Specially Appointed Researcher<br/>Center for Environmental Remote Sensing, Chiba University, Japan</div>
+        <a class="ref-email" href="mailto:khan.muhammad.sa@alumni.tsukuba.ac.jp">khan.muhammad.sa@alumni.tsukuba.ac.jp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-head">Get in Touch</h2>
+      <p class="contact-sub">I welcome collaborations, academic inquiries, research opportunities, and professional connections. Feel free to reach out by email or via any of my academic profiles.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="contact-item-icon">✉</span>
+          <div>
+            <div class="contact-item-label">Primary Email</div>
+            <div class="contact-item-val"><a href="mailto:anjumanarapd@gmail.com">anjumanarapd@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon">✉</span>
+          <div>
+            <div class="contact-item-label">Alternate Email</div>
+            <div class="contact-item-val"><a href="mailto:anjuman1497@gmail.com">anjuman1497@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon">📍</span>
+          <div>
+            <div class="contact-item-label">Current Location</div>
+            <div class="contact-item-val">Kofuchu-cho, Kofu, Yamanashi, Japan</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon">📞</span>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-val">+81 7089702656</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="contact-item-label" style="color:rgba(255,255,255,0.5);margin-bottom:12px;">Academic Profiles</p>
+      <div class="contact-profiles">
+        <a class="contact-profile-link" href="https://scholar.google.com/citations?user=w0ccYEQAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
+        <a class="contact-profile-link" href="https://orcid.org/0009-0009-2508-024X" target="_blank">🆔 ORCID — 0009-0009-2508-024X</a>
+        <a class="contact-profile-link" href="https://github.com/anjuman1497" target="_blank">💻 GitHub — anjuman1497</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    © Dr. Anjuman Ara Khatun · 2026 &nbsp;·&nbsp; Materials Scientist &amp; R&amp;D Engineer · Kofu, Yamanashi, Japan
+    &nbsp;·&nbsp; Last updated: June 2026
+  </div>
+</section>
+
+<script>
+  /* ── Nav toggle (mobile) ── */
+  function toggleNav() {
+    document.getElementById('navTabs').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navTabs').classList.remove('open');
+  }
+
+  /* ── Active nav highlight on scroll ── */
+  const sections = document.querySelectorAll('section[id], div.section[id]');
+  const navLinks = document.querySelectorAll('.nav-tabs li a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+  /* ── Publication filter ── */
+  function filterPubs(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pub-item').forEach(item => {
+      if (tag === 'all') { item.style.display = ''; return; }
+      const tags = item.getAttribute('data-tags') || '';
+      item.style.display = tags.includes(tag) ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
